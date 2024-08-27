@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<style>
+    .pd{
+width: 100%; height: 250px; overflow-y: auto;
+}
+
+@media (max-width: 600px){
+    .pd{
+    width: 100%; height: auto;
+    }
+}
+</style>
+<div class="hero_area">
+<section class="product_section layout_padding">
+    <div class="container">
+    <div class="row">
+        <div class="col-sm-2" style=""></div>
+
+        <div class="col-sm-4 mr-3" style="">
+
+         <!-- slider section -->
+         <section class="slider_section ">
+
+            <img src="{{ post.file_1.url }}" alt="" style="height: 300px; width: 100%;">
+
+         </section>
+         <!-- end slider section -->
+
+        </div>
+
+        <div class="col-sm-4 m-3" style="height: 300px; width: 100%;">
+            <h3> <b>{{ post.name }}</b> </h3>
+            <hr>
+            <b>Price: {{ post.currency }} {{ post.price }}</b>
+            <hr>
+            <div class="pd">
+                {{ post.description|linebreaks }}
+            </div>
+
+        </div>
+
+        <div class="col-sm-2" style=""></div>
+
+    </div>
+</div>
+</section>
+</div>
+{% endblock %}
